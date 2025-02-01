@@ -1,4 +1,6 @@
 <x-app-layout>
+    @section('title', 'Mon tableau de bord')
+
     <div class="container mt-5">
         <h1 class="text-dark">Créer votre boutique</h1>
     

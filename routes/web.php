@@ -25,8 +25,17 @@ use App\Http\Controllers\ShopController;
 Route::middleware(['auth'])->group(function () {
     Route::get('shop/create', [ShopController::class, 'create'])->name('shop.create');
     Route::post('shop', [ShopController::class, 'store'])->name('shop.store');
-    Route::get('shop/{shop}', [ShopController::class, 'show'])->name('shop.show');
+   // Route::get('shop/{shop}', [ShopController::class, 'show'])->name('shop.show');
     Route::get('my domains', [ShopController::class, 'myDomains'])->name('domains.list');
-    Route::get('shopsuccess', [ShopController::class, 'success'])->name('shopsuccess');
+    Route::get('shopsuccess/{domain}', [ShopController::class, 'success'])->name('shopsuccess');
+
+    Route::domain('{shop}.technicaltest.me')->group(function () {
+        Route::get('/', function ($shop) {
+            $user = auth()->user();
+            return view('showShop', compact( 'user'));
+        })->name('shop.show');
+    });
+    
+
 });
 

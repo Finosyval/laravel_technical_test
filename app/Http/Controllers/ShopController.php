@@ -8,11 +8,6 @@ use Illuminate\Support\Str;
 
 class ShopController extends Controller
 {
-    public function create()
-    {
-        return view('shop.create');
-    }
-
     public function store(Request $request)
     {
         // Validation
@@ -21,7 +16,7 @@ class ShopController extends Controller
         ]);
 
         // Créer le sous-domaine
-        $domain_name = Str::slug($request->shop_name) . '.domain.xxx';
+        $domain_name = Str::slug($request->shop_name) . '.technicaltest.me';
 
         // Créer la boutique
         $shop = new Shop();
@@ -30,12 +25,12 @@ class ShopController extends Controller
         $shop->domain_name = $domain_name;
         $shop->save();
         
-        return redirect()->route('shopsuccess');
+        return redirect()->route('shopsuccess',['domain' => $domain_name]);
     }
 
-    public function success()
+    public function success($domain)
     {
-        return view('successpage');
+        return view('successpage', compact('domain'));
     }
 public function myDomains()
     {

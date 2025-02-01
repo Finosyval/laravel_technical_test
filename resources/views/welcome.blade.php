@@ -19,7 +19,7 @@
   border-radius: 5px;
 }
 </style>
-    <title>Bienvenue</title>
+    <title>Welcome</title>
    
 </head>
 <body>

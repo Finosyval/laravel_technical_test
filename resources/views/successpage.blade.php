@@ -1,10 +1,11 @@
 <x-app-layout>
-
+    @section('title', 'Succès')
     <div class="container mt-5">
-        <p>
-            Félicitations, votre boutique a été créée avec succès. Vous pouvez maintenant la consulter en cliquant 
-          <span style="color: red">  <a href="{{ route('domains.list') }}">ici</a>  </span> 
+        <h1>Félicitations, votre boutique a été créée !</h1>
+        <p>Vous pouvez y accéder en cliquant sur :
+            <span style="color:red;">
+                <a href="http://{{ $domain }}">{{ $domain}}</a>
+            </span>
         </p>
-        
     </div>
 </x-app-layout>
