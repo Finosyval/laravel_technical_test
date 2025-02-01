@@ -33,6 +33,7 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         script: |
           cd ~/laravel_technical_test
+          cp .env-example .env
           chmod +x run.sh
           ./run.sh
           
