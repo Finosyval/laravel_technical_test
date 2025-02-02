@@ -34,7 +34,9 @@ jobs:
         script: |
           cd ~/laravel_technical_test
           cp .env.example .env
+          
+          cp -r ~/laravel_technical_test /var/www/html
+          cd /var/www/html/laravel_technical_test
           chmod +x run.sh
           ./run.sh
-          cp -r ~/laravel_technical_test /var/www/html
           
