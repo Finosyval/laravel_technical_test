@@ -156,7 +156,7 @@ return [
     |
     */
 
-    'domain' => env('SESSION_DOMAIN','.app.local'),
+    //'domain' => env('SESSION_DOMAIN','.technicaltest.me'),
 
     /*
     |--------------------------------------------------------------------------

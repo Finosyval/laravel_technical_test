@@ -16,11 +16,11 @@ Route::middleware(['auth'])->group(function () {
     Route::get('my domains', [ShopController::class, 'myDomains'])->name('domains.list');
     Route::get('shopsuccess/{domain}', [ShopController::class, 'success'])->name('shopsuccess');
 
-    Route::domain('{shop}.app.local')->group(function () {
+    Route::domain('{shop}.technicaltest.me')->group(function () {
 
      Route::get('/', function ($shop) {
              // Ajout du domaine complet à la requête
-        $shop = Shop::where('domain_name', $shop . '.app.local')->first();
+        $shop = Shop::where('domain_name', $shop . '.technicaltest.me')->first();
             
             // Vérifier si la boutique existe et l'utilisateur associé
             if ($shop) {

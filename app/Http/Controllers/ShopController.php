@@ -16,7 +16,7 @@ class ShopController extends Controller
         ]);
 
         // Créer le sous-domaine
-        $domain_name = Str::slug($request->shop_name) . '.app.local';
+        $domain_name = Str::slug($request->shop_name) . '.technicaltest.me';
 
         // Créer la boutique
         $shop = new Shop();
