@@ -5,7 +5,7 @@
         @foreach ($shops as $shop)
             <li>
                 {{ $loop->iteration }}. 
-                <a href="https://{{ $shop->domain_name }}" target="_blank">{{ $shop->domain_name }}</a>
+                <a href="http://{{ $shop->domain_name }}" target="_blank">{{ $shop->domain_name }}</a>
             </li>
         @endforeach
     </ul> 

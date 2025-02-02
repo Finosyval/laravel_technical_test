@@ -16,7 +16,7 @@ class ShopController extends Controller
         ]);
 
         // Créer le sous-domaine
-        $domain_name = Str::slug($request->shop_name) . '.technicaltest.me';
+        $domain_name = Str::slug($request->shop_name) . '.app.local';
 
         // Créer la boutique
         $shop = new Shop();
@@ -24,9 +24,19 @@ class ShopController extends Controller
         $shop->name = $request->shop_name;
         $shop->domain_name = $domain_name;
         $shop->save();
-        
-        return redirect()->route('shopsuccess',['domain' => $domain_name]);
+        //$user=$shop->user;
+     
+       //return  redirect() ->route('shop.show', compact('shop','user')); 
+
+
+         return redirect()->route('shopsuccess',['domain' => $domain_name]);
+    
+    
     }
+
+
+
+
 
     public function success($domain)
     {

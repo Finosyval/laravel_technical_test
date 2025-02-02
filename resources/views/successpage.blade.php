@@ -4,7 +4,7 @@
         <h1>Félicitations, votre boutique a été créée !</h1>
         <p>Vous pouvez y accéder en cliquant sur :
             <span style="color:red;">
-                <a href="http://{{ $domain }}">{{ $domain}}</a>
+                <a href="http://{{ $domain }}" target="_blank">{{ $domain }}</a>
             </span>
         </p>
     </div>
