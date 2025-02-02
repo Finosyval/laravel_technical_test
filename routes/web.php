@@ -8,7 +8,31 @@ use App\Http\Controllers\ShopController;
 
 
 
+
+
+
+
+Route::domain('{shop}.technicaltest.me')->group(function () {
 //priorité sur / (pour welcome)
+    Route::get('/', function ($shop) {
+            // Ajout du domaine complet à la requête
+       $shop = Shop::where('domain_name', $shop . '.technicaltest.me')->first();
+           
+           // Vérifier si la boutique existe et l'utilisateur associé
+           if ($shop) {
+               $user = $shop->user;  // Accéder à l'utilisateur via la relation
+   
+               // Afficher la vue showShop avec les informations de l'utilisateur
+               return view('showShop', compact('user', 'shop'));
+           } else {
+               return abort(404); // Si le sous-domaine ne correspond à aucune boutique
+           }
+       });
+
+
+
+   }); 
+   
 Route::middleware(['auth'])->group(function () {
     Route::get('shop/create', [ShopController::class, 'create'])->name('shop.create');
     Route::post('shop', [ShopController::class, 'store'])->name('shop.store');
@@ -16,27 +40,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('my domains', [ShopController::class, 'myDomains'])->name('domains.list');
     Route::get('shopsuccess/{domain}', [ShopController::class, 'success'])->name('shopsuccess');
 
-    Route::domain('{shop}.technicaltest.me')->group(function () {
-
-     Route::get('/', function ($shop) {
-             // Ajout du domaine complet à la requête
-        $shop = Shop::where('domain_name', $shop . '.technicaltest.me')->first();
-            
-            // Vérifier si la boutique existe et l'utilisateur associé
-            if ($shop) {
-                $user = $shop->user;  // Accéder à l'utilisateur via la relation
-    
-                // Afficher la vue showShop avec les informations de l'utilisateur
-                return view('showShop', compact('user', 'shop'));
-            } else {
-                return abort(404); // Si le sous-domaine ne correspond à aucune boutique
-            }
-        });
-
-
-
-    }); 
-    
 
 });
 
