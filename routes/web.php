@@ -5,13 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Models\Shop;
 use App\Http\Controllers\ShopController;
 
-
-
-
-
-
-
-
+        //
 Route::domain('{shop}.technicaltest.me')->group(function () {
 //priorité sur / (pour welcome)
     Route::get('/', function ($shop) {
