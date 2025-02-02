@@ -25,7 +25,7 @@
 <body>
     <div class="container">
         <h1>Bienvenue sur notre plateforme !</h1>
-        <p>Inscrivez vous pour commencer à creer vos boutiques ou connectez vous pour acceder à votre espace</p>
+        <p>Inscrivez vous pour commencer à creer vos boutiques ou connectez vous pour acceder à votre espace de travail</p>
         <a class="button" href="{{ route('register') }}" class="btn">S'inscrire</a>
         <a class= "button" href="{{ route('login') }}" class="btn">Se connecter</a>
     </div>
