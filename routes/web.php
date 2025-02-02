@@ -69,7 +69,7 @@ require __DIR__.'/auth.php';
 
 
 
-//test session
+//petit test  session
 
 Route::get('/test-session', function () {
     session(['test' => 'Laravel fonctionne avec file !']);
