@@ -24,6 +24,9 @@ Route::domain('{shop}.technicaltest.me')->group(function () {
        });
 
 
+       //
+
+
 
    }); 
    
